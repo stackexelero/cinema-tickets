@@ -25,5 +25,16 @@ public class TicketTypeRequest {
     public enum Type {
         ADULT, CHILD , INFANT
     }
-
+    
+    public int getTypePrice() {
+        switch (type) {
+            case ADULT: return 20;
+            case CHILD: return 10;
+            case INFANT: return 0;
+        }
+        return 0;
+    }
+    public int getTotalPrice() {
+    	return noOfTickets * getTypePrice();
+    }
 }
